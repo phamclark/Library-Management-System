@@ -1,0 +1,9 @@
+C:\Users\Clark\RiderProjects\Library-Management-System\Library.Models\bin\Debug\netcoreapp3.1\Library.Models.deps.json
+C:\Users\Clark\RiderProjects\Library-Management-System\Library.Models\bin\Debug\netcoreapp3.1\Library.Models.dll
+C:\Users\Clark\RiderProjects\Library-Management-System\Library.Models\bin\Debug\netcoreapp3.1\Library.Models.pdb
+C:\Users\Clark\RiderProjects\Library-Management-System\Library.Models\obj\Debug\netcoreapp3.1\Library.Models.csproj.AssemblyReference.cache
+C:\Users\Clark\RiderProjects\Library-Management-System\Library.Models\obj\Debug\netcoreapp3.1\Library.Models.AssemblyInfoInputs.cache
+C:\Users\Clark\RiderProjects\Library-Management-System\Library.Models\obj\Debug\netcoreapp3.1\Library.Models.AssemblyInfo.cs
+C:\Users\Clark\RiderProjects\Library-Management-System\Library.Models\obj\Debug\netcoreapp3.1\Library.Models.csproj.CoreCompileInputs.cache
+C:\Users\Clark\RiderProjects\Library-Management-System\Library.Models\obj\Debug\netcoreapp3.1\Library.Models.dll
+C:\Users\Clark\RiderProjects\Library-Management-System\Library.Models\obj\Debug\netcoreapp3.1\Library.Models.pdb
