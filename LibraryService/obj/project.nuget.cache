@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pKzvAvcWOaIyhmgV6h1mZTHYVF+wRKZ0W9qMBYz9FTMtzN4/anDMqVMyOglg6QUJCOXJmFTsP9C7nQddjuAw2g==",
+  "dgSpecHash": "bnSGgF6ZNubEqM4H9D4cBekqA2vJghq5zOrFMpkcZoad8zMpScIgw7bODFrGC41Vrt40jPVISQs75BAWRKG6hA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryService\\LibraryService.csproj",
+  "projectFilePath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryService\\LibraryService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Clark\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.7\\microsoft.aspnetcore.cryptography.internal.5.0.7.nupkg.sha512",
     "C:\\Users\\Clark\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.7\\microsoft.aspnetcore.cryptography.keyderivation.5.0.7.nupkg.sha512",

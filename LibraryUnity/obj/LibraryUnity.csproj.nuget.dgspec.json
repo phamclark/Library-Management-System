@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Clark\\source\\repos\\Library\\LibraryUnity\\LibraryUnity.csproj": {}
+    "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryUnity\\LibraryUnity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Clark\\source\\repos\\Library\\LibraryUnity\\LibraryUnity.csproj": {
+    "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryUnity\\LibraryUnity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryUnity\\LibraryUnity.csproj",
+        "projectUniqueName": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryUnity\\LibraryUnity.csproj",
         "projectName": "LibraryUnity",
-        "projectPath": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryUnity\\LibraryUnity.csproj",
+        "projectPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryUnity\\LibraryUnity.csproj",
         "packagesPath": "C:\\Users\\Clark\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryUnity\\obj\\",
+        "outputPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryUnity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

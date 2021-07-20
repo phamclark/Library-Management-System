@@ -6602,11 +6602,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryBookStore\\LibraryBookStore.csproj",
+      "projectUniqueName": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryBookStore\\LibraryBookStore.csproj",
       "projectName": "LibraryBookStore",
-      "projectPath": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryBookStore\\LibraryBookStore.csproj",
+      "projectPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryBookStore\\LibraryBookStore.csproj",
       "packagesPath": "C:\\Users\\Clark\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryBookStore\\obj\\",
+      "outputPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryBookStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6628,14 +6628,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Clark\\source\\repos\\Library\\LibraryData\\LibraryData.csproj": {
-              "projectPath": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryData\\LibraryData.csproj"
+            "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryData\\LibraryData.csproj": {
+              "projectPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryData\\LibraryData.csproj"
             },
-            "C:\\Users\\Clark\\source\\repos\\Library\\LibraryService\\LibraryService.csproj": {
-              "projectPath": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryService\\LibraryService.csproj"
+            "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryService\\LibraryService.csproj": {
+              "projectPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryService\\LibraryService.csproj"
             },
-            "C:\\Users\\Clark\\source\\repos\\Library\\LibraryUnity\\LibraryUnity.csproj": {
-              "projectPath": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryUnity\\LibraryUnity.csproj"
+            "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryUnity\\LibraryUnity.csproj": {
+              "projectPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryUnity\\LibraryUnity.csproj"
             }
           }
         }
