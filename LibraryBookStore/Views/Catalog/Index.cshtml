@@ -1,0 +1,48 @@
+﻿@model LibraryBookStore.Models.Catalog.AssetIndexModel
+<div class="component">
+    <ul class="align">
+        <!-- Book -->
+        @foreach (var asset in Model.Assets)
+        {
+            <li>
+                <figure class='book'>
+                    <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@asset.Id">
+                                <img src="@asset.CoverImageUrl" alt="@asset.Title" width="100%" height="100%">
+                            </a>
+                            <span class="ribbon bestseller">Nº1</span>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <!-- Pages -->
+                    <ul class='page'>
+                        <li></li>
+                        <li>
+                            <a class="btn" asp-controller="Catalog" asp-action="Detail" asp-route-id="@asset.Id">Preview</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- Back -->
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption>
+                        <h3>@asset.Title</h3>
+                        <span>By Ethan Marcotte</span>
+                        <p>From mobile browsers to netbooks and tablets, users are visiting your sites from an increasing array of devices and browsers. Are your designs ready?...</p>
+                    </figcaption>
+                </figure>
+            </li>
+        }
+    </ul>
+</div>
+

@@ -1,0 +1,136 @@
+﻿@model LibraryBookStore.Models.Home.BookMarkModel
+<style>
+    body {
+        background-color: #1d1f20;
+        /*filter: drop-shadow(15px 5px 5px #494338)*/
+    }
+</style>
+<div id="wrapper">
+    <div style="position: relative; margin: 2% auto; width: 670px;">
+        <div class="book-cover" style="width: 90rem; right: 23rem; position: relative;">
+            <img src="~/images/bookcover2.png" alt="" style="width: 100%;">
+        </div>
+        <section class="open-book" style=" position: absolute; top: 17px; right: -22rem; width: 79rem; height: 59rem; filter: drop-shadow(15px 5px 5px #494338); background-image: url(https://img00.deviantart.net/cbb9/i/2005/258/c/4/paper_texture_v5_by_bashcorpo.jpg); 
+ /*background-size: auto 100%;**/
+     ">
+            <header>
+                <h1>
+                    Harry Potter and the
+                    Sorcerer's Stone
+                </h1>
+                <h6>Erin E. Sullivan</h6>
+            </header>
+            <article style=" height: 52rem;">
+                <h2 class="chapter-title">CHAPTER ONE</h2>
+                <p>
+                    M r. and Mrs. Dursley, of number four, Privet Drive, were proud to say
+                    that they were perfectly normal, thank you very much. They were the last people
+                    you’d expect to be involved in anything strange or mysterious, because they just
+                    didn’t hold with such nonsense.
+                </p>
+                <p>
+                    Mr. Dursley was the director of a firm called Grunnings, which made
+                    drills. He was a big, beefy man with hardly any neck, although he did have a
+                    very large mustache. Mrs. Dursley was thin and blonde and had nearly twice the
+                    usual amount of neck, which came in very useful as she spent so much of her
+                    time craning over garden fences, spying on the neighbors. The Dursleys had a
+                    small son called Dudley and in their opinion there was no finer boy anywhere.
+                </p>
+                <p>
+                    <a href="https://codepen.io/">The Dursleys</a> had everything they wanted, but they also had a secret, and
+                    their greatest fear was that somebody would discover it. They didn’t think they
+                    could bear it if anyone found out about the Potters. Mrs. Potter was Mrs.
+                    Dursley’s sister, but they hadn’t met for several years; in fact, Mrs. Dursley
+                    pretended she didn’t have a sister, because her sister and her good-for-nothing
+                    husband were as unDursleyish as it was possible to be. The Dursleys shuddered
+                    to think what the neighbors would say if the Potters arrived in the street. The
+                    Dursleys knew that the Potters had a small son, too, but they had never even
+                    seen him. This boy was another good reason for keeping the Potters away; they
+                    didn’t want Dudley mixing with a child like that.
+                </p>
+                <p>
+                    When Mr. and Mrs. Dursley woke up on the dull, gray Tuesday our story
+                    starts, there was nothing about the cloudy sky outside to suggest that strange and
+                    mysterious things would soon be happening all over the country. Mr. Dursley
+                    hummed as he picked out his most boring tie for work, and Mrs. Dursley
+                    gossiped away happily as she wrestled a screaming Dudley into his high chair
+                </p>
+                <p>
+                    To <a href="https://codepen.io/">CodePen.io</a> she went, but not brainlessly! Erin "Oohed" and "Ahhed" at the recently picked pens. She envied the skills of those using compilers she has yet to dabble in. Then she put together a list of what she would like to achieve.
+                </p>
+                <p>
+                    Erin chuckled to herself, "This sounds crazy, but what if I develop a section of text that looks like a book?"
+                </p>
+                <p>
+                    She paused, realizing that what she was about to do was a trend years ago. This severely increased the chance of her project being mocked after launch. What was the specific trend Erin remembered? Skeuomorphism.
+                </p>
+                <dl>
+                    <dt><strong>skeu&bull;o&bull;morph</strong></dt>
+                    <dd>
+                        <em>noun</em><br>
+                        an object or feature that imitates the design of a similar artifact made from another material.
+                    </dd>
+                </dl>
+                <p>
+                    Outside of skeuomorphism, the idea actually was not very silly. Erin always had an appreciation towards print work. The thought of mimicking similar designs onto a web interface has always fascinated her. So, why not start with the classic print design of a novel?
+                </p>
+                <p>
+                    She began to jot down a list of elements that are typically in a novel:
+                </p>
+                <ul>
+                    <li>Serif typefaces</li>
+                    <li>
+                        Header area with the title of the book on the left, and the author of said book on the right. <em>Erin is aware that content within the header of the same page as a chapter title does not appear, but she made an exception</em>.
+                    </li>
+                    <li>An adorned chapter title</li>
+                    <li>A dropcap for the first letter of the first paragraph of the chapter</li>
+                    <li>Indented paragraphs</li>
+                    <li>Page numbers</li>
+                </ul>
+                <p>
+                    She was then picturing herself making marks on a novel like she used to in school. In her true fashion, she got carried away with "What ifs."
+                </p>
+                <ul>
+                    <li>
+                        "What if highlighting the text actually looked <mark>like a highlighter</mark>?"
+                        <ul>
+                            <li>"What if I wanted it to be <mark class="pink">pink</mark>?"</li>
+                            <li>"<mark class="blue">Blue</mark>?"</li>
+                            <li>"<mark class="green">Green</mark>?"</li>
+                            <li>"<mark class="orange">Orange</mark>?"</li>
+                        </ul>
+                    </li>
+                    <li>"What if I found <s>a typo</s><sup>an error in the content</sup> and wanted to make a correction?"</li>
+                    @*<li>"What if I was viewing this on mobile&mdash;"</li>*@
+                </ul>
+                @*<p>
+                    The true obstacle showed its form. Responsiveness. How on Earth will she make this work?
+                </p>
+                <p>
+                    Erin pulled out her notepad and started sketching. First she began to illustrate the wireframe of the book in its entirety. Then she recorded some notes on how each element would break down as the screen size got smaller. After several minutes, the blueprint was complete. She came to the conclusion that mobile viewing must stay minimal. The pages go away, which makes the page numbers no longer have a function so they must go away, and if those go away then there is no need for a cover since it is used to help hold and protect pages.
+                </p>
+                <p>
+                    She looks back at the blinking cursor of her blank canvas in Sublime Text 2. Doubt begins to linger in the back of her mind with the thought of her new code never being used and her time spent ends up being a waste. Her fingers were typing anyway.
+                </p>
+                <p>
+                    Erin smirked, "Well at least I think it's worth a try."
+                </p>*@
+            </article>
+            <footer>
+                <ol id="page-numbers">
+                    <li>
+                        <div class="hoverFooter">
+                            <img src="@Model.QRIndex1" class="QRCodeFooter" />
+                            <div class="tooltip QRCodeFooterHover" style="width: 200px; height: 200px;">
+                                <img src="@Model.QRIndex1" alt="" style="width:100%;" />
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>2</li>
+                </ol>
+            </footer>
+        </section>
+
+    </div>
+</div>

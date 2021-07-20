@@ -1,0 +1,30 @@
+﻿@model LibraryBookStore.Models.Checkin.CheckinModel
+
+<div class="container">
+    <div class="header clearfix">
+        <h3 class="text-muted">Checkin Item</h3>
+    </div>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-3">
+                <div>
+                    <p>@Model.Title</p>
+                    <img src="@Model.ImageUrl" style="width:90%" />
+                </div>
+            </div>
+            <div class="col-md-9">
+                @using (Html.BeginForm("CheckIn", "Catalog", FormMethod.Post))
+                {
+                    @Html.HiddenFor(a=>a.AssetId)
+                    <div>
+                        Please enter Library Card ID
+                        @Html.TextBoxFor(a=>a.LibraryCardId)
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success btn-lg">Check In</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

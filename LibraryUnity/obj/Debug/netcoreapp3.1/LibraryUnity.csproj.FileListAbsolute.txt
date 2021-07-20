@@ -1,0 +1,11 @@
+C:\Users\Clark\source\repos\Library\LibraryUnity\bin\Debug\netcoreapp3.1\LibraryUnity.deps.json
+C:\Users\Clark\source\repos\Library\LibraryUnity\bin\Debug\netcoreapp3.1\LibraryUnity.dll
+C:\Users\Clark\source\repos\Library\LibraryUnity\bin\Debug\netcoreapp3.1\LibraryUnity.pdb
+C:\Users\Clark\source\repos\Library\LibraryUnity\bin\Debug\netcoreapp3.1\KeepAutomation.Barcode.Crystal.dll
+C:\Users\Clark\source\repos\Library\LibraryUnity\obj\Debug\netcoreapp3.1\LibraryUnity.csproj.AssemblyReference.cache
+C:\Users\Clark\source\repos\Library\LibraryUnity\obj\Debug\netcoreapp3.1\LibraryUnity.AssemblyInfoInputs.cache
+C:\Users\Clark\source\repos\Library\LibraryUnity\obj\Debug\netcoreapp3.1\LibraryUnity.AssemblyInfo.cs
+C:\Users\Clark\source\repos\Library\LibraryUnity\obj\Debug\netcoreapp3.1\LibraryUnity.csproj.CoreCompileInputs.cache
+C:\Users\Clark\source\repos\Library\LibraryUnity\obj\Debug\netcoreapp3.1\LibraryUnity.csproj.CopyComplete
+C:\Users\Clark\source\repos\Library\LibraryUnity\obj\Debug\netcoreapp3.1\LibraryUnity.dll
+C:\Users\Clark\source\repos\Library\LibraryUnity\obj\Debug\netcoreapp3.1\LibraryUnity.pdb

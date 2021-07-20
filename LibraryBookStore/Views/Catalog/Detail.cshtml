@@ -1,0 +1,144 @@
+﻿@model LibraryBookStore.Models.Catalog.AssetDetailModel
+<div class="container jumbotron" style="margin-top: 7rem;">
+    <div class="row">
+        <div class="col-md-4">
+            <figure class='book'>
+                <ul class='hardcover_front'>
+                    <li>
+                        <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@Model.AssetId">
+                            <img src="@Model.CoverImage" width="100%" height="100%" alt="@Model.Tittle" />
+                        </a>
+                        <span class="ribbon bestseller">Nº1</span>
+                    </li>
+                    <li>
+
+                    </li>
+                </ul>
+                <ul class='page'>
+                    <li></li>
+                    <li>
+                        <span>
+                            THE BOY WHO LIVED <br />
+                            M r. and Mrs. Dursley, of number four, Privet Drive, were proud to say  <br />
+                            that they were perfectly normal, thank you very much. They were the last  <br />
+                            people you’d expect to be involved in anything strange or mysterious, <br />
+                            because they just <br />
+                            didn’t hold with such nonsense.
+                        </span>
+                    <span>
+                        THE BOY WHO LIVED
+                        M r. and Mrs. Dursley, of number four, Privet Drive, were proud to say
+                        that they were perfectly normal, thank you very much. They were the last
+                        people you’d expect to be involved in anything strange or mysterious, 
+                        because they just
+                        didn’t hold with such nonsense.
+                    </span>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <!-- Back -->
+                <ul class='hardcover_back'>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class='book_spine'>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </figure>
+            
+        </div>
+        <div class="col-md-4">
+            <p>@Model.Tittle</p>
+            <p class="btn btn-warning">@Model.Status</p>
+            <p>@Model.Type</p>
+            <p>@Model.CurrentLocation</p>
+
+            @if (Model.Status == "Lost")
+            {
+                <p>This item has been lost. It cannot be checked out.</p>
+                <a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="MarkFound" asp-route-id="@Model.AssetId">Mark Item Found</a>
+            }
+            @if (Model.Status == "Checked Out")
+            {
+                <p>Checked Out By: @Model.PatronName</p>
+                <a class="btn btn-lg btn-success" role="button" asp-controller="Catalog" asp-action="CheckIn" asp-route-AssetId="@Model.AssetId">Check In</a>
+                <a class="btn btn-lg btn-warning" role="button" asp-controller="Catalog" asp-action="Hold" asp-route-AssetId="@Model.AssetId">Place Hold</a>
+            }
+            @if (Model.Status == "Available")
+            {
+                <p>
+                    <a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="Checkout" asp-route-id="@Model.AssetId">Check Out</a>
+                </p>
+            }
+        </div>
+        <div class="col-md-4">
+            <table>
+                <tr>
+                    <td class="itemLabel">ISBN: </td>
+                    <td class="itemValue">
+                        <div class="hover">
+                            @Model.ISBN
+                            <div class="tooltip isbnCode">
+                                <img src="@Model.ISBNCodeImage" alt="" />
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="itemLabel">Cost: </td>
+                    <td class="itemValue">@Model.Cost</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container jumbotron" style="margin-top: 7rem;">
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Checkout Histories</h4>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Date Loaned</th>
+                        <th>Date Returned</th>
+                        <th>Card Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var checkout in Model.CheckoutHistory)
+                    {
+                        <tr>
+                            <td>@checkout.CheckedOutTime</td>
+                            <td>@checkout.CheckedInTime</td>
+                            <td>@checkout.LibraryCard.NFS</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <h4>Current Holds</h4>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Hold Placed</th>
+                        <th>Patron</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var hold in Model.CurrentHolds)
+                    {
+                        <tr>
+                            <td>@hold.HoldPlaced</td>
+                            <td>@hold.PatronName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>

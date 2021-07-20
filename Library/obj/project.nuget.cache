@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7sQ+AeyPa45SOeJ3h2LzPT5x09Xo4RKghZxoQQnALAUxBsaLHTkxxNqiK3HeTEt9J5snTiqUQpRGuMaB63CkJA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Clark\\source\\repos\\Library\\Library\\Library.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Clark\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.14\\microsoft.visualstudio.azure.containers.tools.targets.1.10.14.nupkg.sha512"
+  ],
+  "logs": []
+}
