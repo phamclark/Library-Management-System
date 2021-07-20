@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lfZDCi5c+MZHeq/nECReUQIP4+lmUwLoUOvrBS91dSbHm4KKYeEgZIQATDwb36lHI1qycFRixg3B5Lm/36FjrA==",
+  "dgSpecHash": "5RwqMCi5Psq5DoBJ11QyOUS6AIGk/DkO/ZHxfBTBN4cIzQFmMk5FiEbUCXyond6nX5b28WumhSPab05GBxsmLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryBookStore\\LibraryBookStore.csproj",
+  "projectFilePath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryBookStore\\LibraryBookStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Clark\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Clark\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.7\\microsoft.aspnetcore.cryptography.internal.5.0.7.nupkg.sha512",

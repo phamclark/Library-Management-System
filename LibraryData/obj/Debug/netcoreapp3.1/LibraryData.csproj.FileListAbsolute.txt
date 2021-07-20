@@ -10,3 +10,15 @@ C:\Users\Clark\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\LibraryD
 C:\Users\Clark\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.pdb
 C:\Users\Clark\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.genruntimeconfig.cache
 C:\Users\Clark\source\repos\Library\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.csproj.AssemblyReference.cache
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\bin\Debug\netcoreapp3.1\LibraryData.deps.json
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\bin\Debug\netcoreapp3.1\LibraryData.runtimeconfig.json
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\bin\Debug\netcoreapp3.1\LibraryData.runtimeconfig.dev.json
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\bin\Debug\netcoreapp3.1\LibraryData.dll
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\bin\Debug\netcoreapp3.1\LibraryData.pdb
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.csproj.AssemblyReference.cache
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.AssemblyInfoInputs.cache
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.AssemblyInfo.cs
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.csproj.CoreCompileInputs.cache
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.dll
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.pdb
+C:\Users\Clark\RiderProjects\Library-Management-System\LibraryData\obj\Debug\netcoreapp3.1\LibraryData.genruntimeconfig.cache

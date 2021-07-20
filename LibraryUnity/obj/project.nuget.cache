@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Iv5qtHiqP43QpR8dUOk0IhBgc9+dbqLcaRr2va8bP/HRKQg5M63QfSLsrJyLxz0dNOyWGFZmTCFw4UEzKWbf7w==",
+  "dgSpecHash": "ekQviA5ITvsWduah3L7uHO7mOdZcJ24XjuvPpK9UG/s6whf0cMXZIaMFn5bTFaMxYwhPjO3f06cwqdlS8SdQ8g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Clark\\source\\repos\\Library\\LibraryUnity\\LibraryUnity.csproj",
+  "projectFilePath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryUnity\\LibraryUnity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Clark\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Clark\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
