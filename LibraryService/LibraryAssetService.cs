@@ -1,11 +1,11 @@
 ﻿using LibraryData;
 using LibraryData.Models;
-using LibraryData.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LibraryService.Interfaces;
 
 namespace LibraryService
 {

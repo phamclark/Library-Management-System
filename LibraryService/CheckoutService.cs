@@ -1,20 +1,29 @@
 ﻿using LibraryData;
 using LibraryData.Models;
-using LibraryData.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using AutoMapper;
+using Library.Models;
+using Library.Models.Dtos;
+using LibraryService.Interfaces;
+using LibraryService.Models;
 
 namespace LibraryService
 {
     public class CheckoutService : ICheckout
     {
-        protected LibraryContext _dbContext;
-        public CheckoutService(LibraryContext dbContext)
+        private readonly LibraryContext _dbContext;
+        private readonly IMapper _mapper;
+        public CheckoutService(
+            LibraryContext dbContext,
+            IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
         public void Add(Checkout newCheckout)
         {
@@ -114,12 +123,26 @@ namespace LibraryService
             return _dbContext.Checkouts;
         }
 
-        public IEnumerable<CheckoutHistory> GetCheckoutHistories(Guid Id)
+        public async Task<PagedServiceResult<CheckoutHistoryDto>> GetCheckoutHistories(Guid id, int page, int perPage)
         {
-            return _dbContext.CheckoutHistories
+            var entsToSkip = (page - 1) * perPage;
+            var histories =  await _dbContext.CheckoutHistories
                 .Include(x => x.LibraryAsset)
                 .Include(x => x.LibraryCard)
-                .Where(x => x.LibraryAsset.Id == Id);
+                .Where(x => x.LibraryAsset.Id == id).ToListAsync();
+            
+            var pageOfHistories = histories.Skip(entsToSkip).Take(perPage);
+            var paginatedHistories = _mapper.Map<List<CheckoutHistoryDto>>(pageOfHistories);
+            return new PagedServiceResult<CheckoutHistoryDto>()
+            {
+                Data = new PaginationResult<CheckoutHistoryDto>()
+                {
+                    Results =  paginatedHistories,
+                    Perpage = perPage,
+                    PageNumber = page
+                },
+                Error =  null
+            };
         }
 
         public IEnumerable<Hold> GetCurrentHolds(Guid Id)

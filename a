@@ -1,0 +1,397 @@
+[1mdiff --git a/Library.Models/Dtos/CheckoutHistoryDto.cs b/Library.Models/Dtos/CheckoutHistoryDto.cs[m
+[1mindex 9ad9937..e6b10ba 100644[m
+[1m--- a/Library.Models/Dtos/CheckoutHistoryDto.cs[m
+[1m+++ b/Library.Models/Dtos/CheckoutHistoryDto.cs[m
+[36m@@ -1,7 +1,11 @@[m
+[32m+[m[32musing System;[m
+[32m+[m
+ namespace Library.Models.Dtos[m
+ {[m
+     public class CheckoutHistoryDto[m
+     {[m
+[31m-        [m
+[32m+[m[32m        public Guid Id { get; set; }[m
+[32m+[m[32m        public DateTime CheckedOutTime { get; set; }[m
+[32m+[m[32m        public DateTime? CheckedInTime { get; set; }[m
+     }[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/Library.Models/Library.Models.csproj b/Library.Models/Library.Models.csproj[m
+[1mindex cbfa581..df151be 100644[m
+[1m--- a/Library.Models/Library.Models.csproj[m
+[1m+++ b/Library.Models/Library.Models.csproj[m
+[36m@@ -1,7 +1,15 @@[m
+ <Project Sdk="Microsoft.NET.Sdk">[m
+ [m
+     <PropertyGroup>[m
+[31m-        <TargetFramework>net5.0</TargetFramework>[m
+[32m+[m[32m        <TargetFrameworks>net5.0;netcoreapp3.1</TargetFrameworks>[m
+     </PropertyGroup>[m
+ [m
+[32m+[m[32m    <ItemGroup>[m
+[32m+[m[32m      <PackageReference Include="AutoMapper" Version="10.1.1" />[m
+[32m+[m[32m    </ItemGroup>[m
+[32m+[m
+[32m+[m[32m    <ItemGroup>[m
+[32m+[m[32m      <ProjectReference Include="..\LibraryData\LibraryData.csproj" />[m
+[32m+[m[32m    </ItemGroup>[m
+[32m+[m
+ </Project>[m
+[1mdiff --git a/Library.Models/Mapping/EntityMappingProfile.cs b/Library.Models/Mapping/EntityMappingProfile.cs[m
+[1mindex afb9631..236a5fe 100644[m
+[1m--- a/Library.Models/Mapping/EntityMappingProfile.cs[m
+[1m+++ b/Library.Models/Mapping/EntityMappingProfile.cs[m
+[36m@@ -1,7 +1,16 @@[m
+[32m+[m[32musing System.Collections.Generic;[m
+[32m+[m[32musing AutoMapper;[m
+[32m+[m[32musing Library.Models.Dtos;[m
+[32m+[m[32musing LibraryData.Models;[m
+[32m+[m
+ namespace Library.Models.Mapping[m
+ {[m
+[31m-    public class EntityMappingProfile[m
+[32m+[m[32m    public class EntityMappingProfile : Profile[m
+     {[m
+[31m-        [m
+[32m+[m[32m        public EntityMappingProfile()[m
+[32m+[m[32m        {[m
+[32m+[m[32m            CreateMap<CheckoutHistoryDto, CheckoutHistory>().ReverseMap();[m
+[32m+[m[32m            CreateMap<List<CheckoutHistoryDto>, List<CheckoutHistory>>().ReverseMap();[m
+[32m+[m[32m        }[m
+     }[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/Library.Models/PaginationResult.cs b/Library.Models/PaginationResult.cs[m
+[1mindex 05b2e22..a988418 100644[m
+[1m--- a/Library.Models/PaginationResult.cs[m
+[1m+++ b/Library.Models/PaginationResult.cs[m
+[36m@@ -1,8 +1,12 @@[m
+ ﻿using System;[m
+[32m+[m[32musing System.Collections.Generic;[m
+ [m
+ namespace Library.Models[m
+ {[m
+[31m-    public class Class1[m
+[32m+[m[32m    public class PaginationResult<T> where T:class[m
+     {[m
+[32m+[m[32m        public List<T> Results { get; set; }[m
+[32m+[m[32m        public int Perpage { get; set; }[m
+[32m+[m[32m        public int PageNumber { get; set; }[m
+     }[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/Library.Models/obj/Debug/net5.0/Library.Models.assets.cache b/Library.Models/obj/Debug/net5.0/Library.Models.assets.cache[m
+[1mindex 27704db..dc21d0e 100644[m
+Binary files a/Library.Models/obj/Debug/net5.0/Library.Models.assets.cache and b/Library.Models/obj/Debug/net5.0/Library.Models.assets.cache differ
+[1mdiff --git a/Library.Models/obj/Debug/netcoreapp3.1/Library.Models.assets.cache b/Library.Models/obj/Debug/netcoreapp3.1/Library.Models.assets.cache[m
+[1mindex 1a4b040..c5edfab 100644[m
+Binary files a/Library.Models/obj/Debug/netcoreapp3.1/Library.Models.assets.cache and b/Library.Models/obj/Debug/netcoreapp3.1/Library.Models.assets.cache differ
+[1mdiff --git a/Library.Models/obj/Debug/netcoreapp3.1/Library.Models.csproj.AssemblyReference.cache b/Library.Models/obj/Debug/netcoreapp3.1/Library.Models.csproj.AssemblyReference.cache[m
+[1mindex 81b0b5e..f5e894a 100644[m
+Binary files a/Library.Models/obj/Debug/netcoreapp3.1/Library.Models.csproj.AssemblyReference.cache and b/Library.Models/obj/Debug/netcoreapp3.1/Library.Models.csproj.AssemblyReference.cache differ
+[1mdiff --git a/Library.Models/obj/Library.Models.csproj.nuget.dgspec.json b/Library.Models/obj/Library.Models.csproj.nuget.dgspec.json[m
+[1mindex 9ccb066..cdca413 100644[m
+[1m--- a/Library.Models/obj/Library.Models.csproj.nuget.dgspec.json[m
+[1m+++ b/Library.Models/obj/Library.Models.csproj.nuget.dgspec.json[m
+[36m@@ -13,6 +13,7 @@[m
+         "packagesPath": "C:\\Users\\Clark\\.nuget\\packages\\",[m
+         "outputPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\Library.Models\\obj\\",[m
+         "projectStyle": "PackageReference",[m
+[32m+[m[32m        "crossTargeting": true,[m
+         "fallbackFolders": [[m
+           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",[m
+           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"[m
+[36m@@ -23,16 +24,29 @@[m
+           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"[m
+         ],[m
+         "originalTargetFrameworks": [[m
+[31m-          "net5.0"[m
+[32m+[m[32m          "net5.0",[m
+[32m+[m[32m          "netcoreapp3.1"[m
+         ],[m
+         "sources": {[m
+           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},[m
+           "https://api.nuget.org/v3/index.json": {}[m
+         },[m
+         "frameworks": {[m
+[32m+[m[32m          "netcoreapp3.1": {[m
+[32m+[m[32m            "targetAlias": "netcoreapp3.1",[m
+[32m+[m[32m            "projectReferences": {[m
+[32m+[m[32m              "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryData\\LibraryData.csproj": {[m
+[32m+[m[32m                "projectPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryData\\LibraryData.csproj"[m
+[32m+[m[32m              }[m
+[32m+[m[32m            }[m
+[32m+[m[32m          },[m
+           "net5.0": {[m
+             "targetAlias": "net5.0",[m
+[31m-            "projectReferences": {}[m
+[32m+[m[32m            "projectReferences": {[m
+[32m+[m[32m              "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryData\\LibraryData.csproj": {[m
+[32m+[m[32m                "projectPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryData\\LibraryData.csproj"[m
+[32m+[m[32m              }[m
+[32m+[m[32m            }[m
+           }[m
+         },[m
+         "warningProperties": {[m
+[36m@@ -42,8 +56,120 @@[m
+         }[m
+       },[m
+       "frameworks": {[m
+[32m+[m[32m        "netcoreapp3.1": {[m
+[32m+[m[32m          "targetAlias": "netcoreapp3.1",[m
+[32m+[m[32m          "dependencies": {[m
+[32m+[m[32m            "AutoMapper": {[m
+[32m+[m[32m              "target": "Package",[m
+[32m+[m[32m              "version": "[10.1.1, )"[m
+[32m+[m[32m            }[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "imports": [[m
+[32m+[m[32m            "net461",[m
+[32m+[m[32m            "net462",[m
+[32m+[m[32m            "net47",[m
+[32m+[m[32m            "net471",[m
+[32m+[m[32m            "net472",[m
+[32m+[m[32m            "net48"[m
+[32m+[m[32m          ],[m
+[32m+[m[32m          "assetTargetFallback": true,[m
+[32m+[m[32m          "warn": true,[m
+[32m+[m[32m          "frameworkReferences": {[m
+[32m+[m[32m            "Microsoft.NETCore.App": {[m
+[32m+[m[32m              "privateAssets": "all"[m
+[32m+[m[32m            }[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"[m
+[32m+[m[32m        },[m
+         "net5.0": {[m
+           "targetAlias": "net5.0",[m
+[32m+[m[32m          "dependencies": {[m
+[32m+[m[32m            "AutoMapper": {[m
+[32m+[m[32m              "target": "Package",[m
+[32m+[m[32m              "version": "[10.1.1, )"[m
+[32m+[m[32m            }[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "imports": [[m
+[32m+[m[32m            "net461",[m
+[32m+[m[32m            "net462",[m
+[32m+[m[32m            "net47",[m
+[32m+[m[32m            "net471",[m
+[32m+[m[32m            "net472",[m
+[32m+[m[32m            "net48"[m
+[32m+[m[32m          ],[m
+[32m+[m[32m          "assetTargetFallback": true,[m
+[32m+[m[32m          "warn": true,[m
+[32m+[m[32m          "frameworkReferences": {[m
+[32m+[m[32m            "Microsoft.NETCore.App": {[m
+[32m+[m[32m              "privateAssets": "all"[m
+[32m+[m[32m            }[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"[m
+[32m+[m[32m        }[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryData\\LibraryData.csproj": {[m
+[32m+[m[32m      "version": "1.0.0",[m
+[32m+[m[32m      "restore": {[m
+[32m+[m[32m        "projectUniqueName": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryData\\LibraryData.csproj",[m
+[32m+[m[32m        "projectName": "LibraryData",[m
+[32m+[m[32m        "projectPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryData\\LibraryData.csproj",[m
+[32m+[m[32m        "packagesPath": "C:\\Users\\Clark\\.nuget\\packages\\",[m
+[32m+[m[32m        "outputPath": "C:\\Users\\Clark\\RiderProjects\\Library-Management-System\\LibraryData\\obj\\",[m
+[32m+[m[32m        "projectStyle": "PackageReference",[m
+[32m+[m[32m        "fallbackFolders": [[m
+[32m+[m[32m          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",[m
+[32m+[m[32m          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"[m
+[32m+[m[32m        ],[m
+[32m+[m[32m        "configFilePaths": [[m
+[32m+[m[32m          "C:\\Users\\Clark\\AppData\\Roaming\\NuGet\\NuGet.Config",[m
+[32m+[m[32m          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",[m
+[32m+[m[32m          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"[m
+[32m+[m[32m        ],[m
+[32m+[m[32m        "originalTargetFrameworks": [[m
+[32m+[m[32m          "netcoreapp3.1"[m
+[32m+[m[32m        ],[m
+[32m+[m[32m        "sources": {[m
+[32m+[m[32m          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},[m
+[32m+[m[32m          "https://api.nuget.org/v3/index.json": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "frameworks": {[m
+[32m+[m[32m          "netcoreapp3.1": {[m
+[32m+[m[32m            "targetAlias": "netcoreapp3.1",[m
+[32m+[m[32m            "projectReferences": {}[m
+[32m+[m[32m          }[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "warningProperties": {[m
+[32m+[m[32m          "warnAsError": [[m
+[32m+[m[32m            "NU1605"[m
+[32m+[m[32m          ][m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "frameworks": {[m
+[32m+[m[32m        "netcoreapp3.1": {[m
+[32m+[m[32m          "targetAlias": "netcoreapp3.1",[m
+[32m+[m[32m          "dependencies": {[m
+[32m+[m[32m            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {[m
+[32m+[m[32m              "target": "Package",[m
+[32m+[m[32m              "version": "[5.0.7, )"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "Microsoft.EntityFrameworkCore.Design": {[m
+[32m+[m[32m              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",[m
+[32m+[m[32m              "suppressParent": "All",[m
+[32m+[m[32m              "target": "Package",[m
+[32m+[m[32m              "version": "[5.0.7, )"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "Microsoft.EntityFrameworkCore.SqlServer": {[m
+[32m+[m[32m              "target": "Package",[m
+[32m+[m[32m              "version": "[5.0.7, )"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "Microsoft.EntityFrameworkCore.Tools": {[m
+[32m+[m[32m              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",[m
+[32m+[m[32m              "suppressParent": "All",[m
+[32m+[m[32m              "target": "Package",[m
+[32m+[m[32m              "version": "[5.0.7, )"[m
+[32m+[m[32m            }[m
+[32m+[m[32m          },[m
+           "imports": [[m
+             "net461",[m
+             "net462",[m
+[1mdiff --git a/Library.Models/obj/Library.Models.csproj.nuget.g.props b/Library.Models/obj/Library.Models.csproj.nuget.g.props[m
+[1mindex 24950f6..226edb4 100644[m
+[1m--- a/Library.Models/obj/Library.Models.csproj.nuget.g.props[m
+[1m+++ b/Library.Models/obj/Library.Models.csproj.nuget.g.props[m
+[36m@@ -15,4 +15,10 @@[m
+   <PropertyGroup>[m
+     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>[m
+   </PropertyGroup>[m
+[32m+[m[32m  <PropertyGroup Condition=" '$(TargetFramework)' == 'net5.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">[m
+[32m+[m[32m    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\10.0.1</PkgNewtonsoft_Json>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m[32m  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' AND '$(ExcludeRestorePackageImports)' != 'true' ">[m
+[32m+[m[32m    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\10.0.1</PkgNewtonsoft_Json>[m
+[32m+[m[32m  </PropertyGroup>[m
+ </Project>[m
+\ No newline at end of file[m
+[1mdiff --git a/Library.Models/obj/project.assets.json b/Library.Models/obj/project.assets.json[m
+[1mindex b73b509..8928f04 100644[m
+[1m--- a/Library.Models/obj/project.assets.json[m
+[1m+++ b/Library.Models/obj/project.assets.json[m
+[36m@@ -1,11 +1,7452 @@[m
+ {[m
+   "version": 3,[m
+   "targets": {[m
+[31m-    "net5.0": {}[m
+[32m+[m[32m    ".NETCoreApp,Version=v3.1": {[m
+[32m+[m[32m      "AutoMapper/10.1.1": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "Microsoft.CSharp": "4.7.0",[m
+[32m+[m[32m          "System.Reflection.Emit": "4.7.0"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "compile": {[m
+[32m+[m[32m          "lib/netstandard2.0/AutoMapper.dll": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/netstandard2.0/AutoMapper.dll": {}[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.AspNetCore.Cryptography.Internal/5.0.7": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "compile": {[m
+[32m+[m[32m          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {}[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.AspNetCore.Cryptography.KeyDerivation/5.0.7": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "Microsoft.AspNetCore.Cryptography.Internal": "5.0.7"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "compile": {[m
+[32m+[m[32m          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/5.0.7": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "Microsoft.EntityFrameworkCore.Relational": "5.0.7",[m
+[32m+[m[32m          "Microsoft.Extensions.Identity.Stores": "5.0.7"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "compile": {[m
+[32m+[m[32m          "lib/netstandard2.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/netstandard2.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.CSharp/4.7.0": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "compile": {[m
+[32m+[m[32m          "ref/netcoreapp2.0/_._": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/netcoreapp2.0/_._": {}[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.Data.SqlClient/2.0.1": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "Microsoft.Data.SqlClient.SNI.runtime": "2.0.1",[m
+[32m+[m[32m          "Microsoft.Identity.Client": "4.14.0",[m
+[32m+[m[32m          "Microsoft.IdentityModel.JsonWebTokens": "5.6.0",[m
+[32m+[m[32m          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.6.0",[m
+[32m+[m[32m          "Microsoft.Win32.Registry": "4.7.0",[m
+[32m+[m[32m          "System.Configuration.ConfigurationManager": "4.7.0",[m
+[32m+[m[32m          "System.Diagnostics.DiagnosticSource": "4.7.0",[m
+[32m+[m[32m          "System.Runtime.Caching": "4.7.0",[m
+[32m+[m[32m          "System.Security.Principal.Windows": "4.7.0",[m
+[32m+[m[32m          "System.Text.Encoding.CodePages": "4.7.0"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "compile": {[m
+[32m+[m[32m          "ref/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtimeTargets": {[m
+[32m+[m[32m          "runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {[m
+[32m+[m[32m            "assetType": "runtime",[m
+[32m+[m[32m            "rid": "unix"[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {[m
+[32m+[m[32m            "assetType": "runtime",[m
+[32m+[m[32m            "rid": "win"[m
+[32m+[m[32m          }[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.Data.SqlClient.SNI.runtime/2.0.1": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "runtimeTargets": {[m
+[32m+[m[32m          "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {[m
+[32m+[m[32m            "assetType": "native",[m
+[32m+[m[32m            "rid": "win-arm"[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb": {[m
+[32m+[m[32m            "assetType": "native",[m
+[32m+[m[32m            "rid": "win-arm"[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {[m
+[32m+[m[32m            "assetType": "native",[m
+[32m+[m[32m            "rid": "win-arm64"[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb": {[m
+[32m+[m[32m            "assetType": "native",[m
+[32m+[m[32m            "rid": "win-arm64"[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {[m
+[32m+[m[32m            "assetType": "native",[m
+[32m+[m[32m            "rid": "win-x64"[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb": {[m
+[32m+[m[32m            "assetType": "native",[m
+[32m+[m[32m            "rid": "win-x64"[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "runtimes/win-x86/native/Microsoft.Data.SqlClien

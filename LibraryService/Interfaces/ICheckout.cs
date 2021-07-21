@@ -2,8 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Library.Models.Dtos;
+using LibraryService.Models;
 
-namespace LibraryData.Services
+namespace LibraryService.Interfaces
 {
     public interface ICheckout
     {
@@ -11,7 +14,7 @@ namespace LibraryData.Services
         void Add(Checkout newCheckout);
         void CheckOutItem(Guid assetId, Guid libraryCardId);
         void CheckInItem(Guid assetId, Guid libraryCardId);
-        IEnumerable<CheckoutHistory> GetCheckoutHistories(Guid Id);
+        Task<PagedServiceResult<CheckoutHistoryDto>> GetCheckoutHistories(Guid id, int page, int perPage);
         IEnumerable<Hold> GetCurrentHolds(Guid Id);
         Checkout GetLatestCheckout(Guid assetId);
         void MarkLost(Guid assetId);

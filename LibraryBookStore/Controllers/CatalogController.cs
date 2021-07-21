@@ -2,7 +2,6 @@
 using LibraryBookStore.Models.Checkin;
 using LibraryBookStore.Models.Checkout;
 using LibraryBookStore.Models.Hold;
-using LibraryData.Services;
 using LibraryUnity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +9,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using LibraryService.Interfaces;
 
 namespace LibraryBookStore.Controllers
 {
@@ -66,7 +66,7 @@ namespace LibraryBookStore.Controllers
                 ISBN = _asset.GetIsbn(asset.Id),
                 CurrentHolds = currentHolds,
                 LastestCheckout = _checkout.GetLatestCheckout(asset.Id),
-                CheckoutHistory = _checkout.GetCheckoutHistories(asset.Id),
+                CheckoutHistory = _checkout.GetCheckoutHistories(asset.Id).Result.Data.Results,
                 PatronName = _checkout.GetPatronCheckout(asset.Id)
             };
             return View(model);
