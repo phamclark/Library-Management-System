@@ -1,5 +1,4 @@
 using LibraryData;
-using LibraryData.Services;
 using LibraryService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LibraryService.Interfaces;
+using AutoMapper;
+using Library.Models.Mapping;
 
 namespace LibraryBookStore
 {
@@ -38,6 +40,7 @@ namespace LibraryBookStore
             });
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
+            services.AddAutoMapper(c => c.AddProfile<EntityMappingProfile>(), typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
